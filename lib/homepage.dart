@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:padma_bank/fundTransfer.dart';
+import 'package:padma_bank/mobileRecharge.dart';
+import 'package:padma_bank/settings.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -45,124 +48,170 @@ class _HomepageState extends State<Homepage> {
                   Text("Services that make your life easy",style: TextStyle(fontSize: 10, fontWeight: FontWeight.normal),),
                   SizedBox(height: 30,),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                     children: [
-                      Container(),
-                      Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white
-                            ),
-                            child: Icon(Icons.transfer_within_a_station,size: 40,),
+
+                      Expanded(
+                        flex:30,
+                        child: InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (BuildContext context) {
+                                  return FundTransfer();
+                                }
+                            ));
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white
+                                ),
+                                child: Icon(Icons.transfer_within_a_station,size: 40,),
+                              ),
+                              SizedBox(height: 5,),
+                              Text("Fund Transfer",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
+                            ],
                           ),
-                          SizedBox(height: 5,),
-                          Text("Fund Transfer",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
-                        ],
+                        ),
                       ),
-                      Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white
-                            ),
-                            child: Icon(Icons.phone_android,size: 40,),
+                      Expanded(
+                        flex: 30,
+                        child: InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (BuildContext context) {
+                                  return MobileRecharge();
+                                }
+                            ));
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white
+                                ),
+                                child: Icon(Icons.phone_android,size: 40,),
+                              ),
+                              SizedBox(height: 5,),
+                              Text("Mobile Recharge",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
+                            ],
                           ),
-                          SizedBox(height: 5,),
-                          Text("Mobile Recharge",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
-                        ],
+                        ),
                       ),
-                      Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white
+                      Expanded(
+                        flex: 30,
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white
+                              ),
+                              child: Icon(Icons.payment,size: 40,),
                             ),
-                            child: Icon(Icons.payment,size: 40,),
-                          ),
-                          SizedBox(height: 5,),
-                          Text("Bill Payment",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
-                        ],
+                            SizedBox(height: 5,),
+                            Text("Bill Payment",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
+                          ],
+                        ),
                       ),
-                      Container(),
+
                     ],
                   ),
                   SizedBox(height: 30,),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(),
-                      Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white
+                      Expanded(
+                        flex: 30,
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white
+                              ),
+                              child: Icon(Icons.account_balance_wallet,size: 40,),
                             ),
-                            child: Icon(Icons.account_balance_wallet,size: 40,),
-                          ),
-                          SizedBox(height: 5,),
-                          Text("My Accounts",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
-                        ],
+                            SizedBox(height: 5,),
+                            Text("My Accounts",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
+                          ],
+                        ),
                       ),
-                      Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white
+                      Expanded(
+                        flex: 30,
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white
+                              ),
+                              child: Icon(Icons.supervisor_account,size: 40,),
                             ),
-                            child: Icon(Icons.supervisor_account,size: 40,),
-                          ),
-                          SizedBox(height: 5,),
-                          Text("Beneficieries",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
-                        ],
+                            SizedBox(height: 5,),
+                            Text("Beneficiaries",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
+                          ],
+                        ),
                       ),
-                      Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white
+                      Expanded(
+                        flex: 30,
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white
+                              ),
+                              child: Icon(Icons.ev_station ,size: 40,),
                             ),
-                            child: Icon(Icons.ev_station ,size: 40,),
-                          ),
-                          SizedBox(height: 5,),
-                          Text("Mini Statement",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
-                        ],
+                            SizedBox(height: 5,),
+                            Text("Mini Statement",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
+                          ],
+                        ),
                       ),
-                      Container(),
                     ],
                   ),
                   SizedBox(height: 30,),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(),
-                      Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white
-                            ),
-                            child: Icon(Icons.settings,size: 40,),
+
+                      Expanded(
+                        flex: 30,
+                        child: InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (BuildContext context) {
+                                  return Settings();
+                                }
+                            ));
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.white
+                                ),
+                                child: Icon(Icons.settings,size: 40,),
+                              ),
+                              SizedBox(height: 5,),
+                              Text("Settings",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
+                            ],
                           ),
-                          SizedBox(height: 5,),
-                          Text("Settings",style: TextStyle(fontSize: 12, fontWeight: FontWeight.normal),)
-                        ],
+                        ),
                       ),
-                      Container(),
+                      Expanded(
+                          flex: 60,
+                          child: Container()),
 
                     ],
                   ),
